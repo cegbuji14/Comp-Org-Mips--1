@@ -10,4 +10,4 @@ la $a0, str #takes a string
 
 li Sa1, 4 #load
 
-sycall
+syscall
