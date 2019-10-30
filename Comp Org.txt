@@ -1,0 +1,14 @@
+.data
+
+.txt
+
+main
+
+li $v0, 8 #loads 8 bits in v0
+
+la $a0, str #takes a string
+
+li Sa1, 4 #load
+
+syscall
+
