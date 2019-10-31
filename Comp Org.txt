@@ -1,6 +1,5 @@
 .data
-    userInput: .space 10
-
+    userInput: .space 11
 .text
   main:
   #Lets users input a 10 character string
@@ -9,7 +8,21 @@
     li $a1, 11
     syscall
     
-      
+   start:
+   #Loads the address of inputted string into register $t1, puts first bit (character) of string in $s0
+    la $t1, userInput
+    add $t1, $t1, $t0
+    lb $s0, ($t1)
+    lb $t
+    blt $s0, 10, #function for the numbers 0-9  integerFunction
+    bge $s0, 97 #function for asci values a-z
+    bge $s0, 65 #function for asci values A-Z
+    
+    
 
-li $v0, 10 
-syscall
+    
+   
+    
+  
+
+
