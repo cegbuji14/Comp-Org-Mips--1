@@ -17,32 +17,46 @@
     bge $s0, 97, lowerASCI #function for asci values a-y   lowerASCI
     bge $s0, 65, UpperASCI #function for asci values A-Y   UpperASCI
     
-    
     addi $t0,$t0, 1
     j start
     
     
-    
-    
-    
     integers: 
-        addi $t0, $t0, 1 #adds one to the incrementer 
-        ble $s0, 47, start #if its less than or equal to 47 it is not in the range of what numbers we want, starts loop for next character
-        sub $s7, $s0, 48 #subtracts 48 from the asci value to represent the decimal  number and store it in $s7
-        add $s6, $s6, $s7 #add the decimal number from $s7 to $s6 where i add the numbers
-        j start
+      addi $t0, $t0, 1 #adds one to the incrementer 
+      ble $s0, 47, start #if its less than or equal to 47 it is not in the range of what numbers we want, starts loop for next character
+      sub $s7, $s0, 48 #subtracts 48 from the asci value to represent the decimal  number and store it in $s7
+      add $s6, $s6, $s7 #add the decimal number from $s7 to $s6 where i add the numbers
+      j start
         
     
     lowerASCI:
-        addi $t0, $t0, 1 #incrementer
-        sub $s4, $s0, 87 #subtracts 87 from asci value to represent the corresponding decimal in the program instructions
-        add $s6, $s6, $s4 #adds the decimal number to $s6 where sum is being calculated
-        j start
+      addi $t0, $t0, 1 #incrementer
+      sub $s4, $s0, 87 #subtracts 87 from asci value to represent the corresponding decimal in the program instructions
+      add $s6, $s6, $s4 #adds the decimal number to $s6 where sum is being calculated
+      j start
     
     UpperASCI:
+      addi $t0, $t0, 1 #incrementer
+      sub $s5, $s0, 55  #subtracts 55 from asci value to represent corresponding decimal in the program instructions
+      add $s6, $s6, $s5 #adds the decimal number to $s6
+      j start
+    
     
 
     
+   
+    
+    
+    
+      
+
+li $v0, 10 
+syscall
+
+  
+  
+
+
    
     
     
