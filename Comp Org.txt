@@ -13,13 +13,23 @@
     la $t1, userInput
     add $t1, $t1, $t0
     lb $s0, ($t1)
-    blt $s0, 10, #function for the numbers 0-9  integers
-    bge $s0, 97 #function for asci values a-z   lowerASCI
-    bge $s0, 65 #function for asci values A-Z   UpperASCI
+    blt $s0, 10, integers #function for the numbers 0-9  integers
+    bge $s0, 97, lowerASCI #function for asci values a-z   lowerASCI
+    bge $s0, 65, UpperASCI #function for asci values A-Z   UpperASCI
     
+    
+    
+    
+    integers:
+    
+    lowerASCI:
+    
+    UpperASCI:
     
 
     
    
     
     
+    
+      
