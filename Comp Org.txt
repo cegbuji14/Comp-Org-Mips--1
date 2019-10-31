@@ -31,12 +31,14 @@
     
     lowerASCI:
       addi $t0, $t0, 1 #incrementer
+      bge $s0, 122, start #if it is greater than or equal to 122 that would represent 'z' and my program is only supposed to go to 'y'
       sub $s4, $s0, 87 #subtracts 87 from asci value to represent the corresponding decimal in the program instructions
       add $s6, $s6, $s4 #adds the decimal number to $s6 where sum is being calculated
       j start
     
     UpperASCI:
       addi $t0, $t0, 1 #incrementer
+      bge $s0, 90, start #if it is greater than 90 that would represent 'Z' and 'Y'
       sub $s5, $s0, 55  #subtracts 55 from asci value to represent corresponding decimal in the program instructions
       add $s6, $s6, $s5 #adds the decimal number to $s6
       j start
@@ -55,6 +57,8 @@ syscall
 
   
   
+
+
 
 
    
